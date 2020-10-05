@@ -1,0 +1,4 @@
+fetch("http://192.168.0.254:8000/api/movie",{ method: "get", }) .then(function
+(res) { //fetch 끝나면 실행 console.log(1, res); alert(res); return res.json();
+//json데이터를 js 오브젝트로 바꿔서 주라 }) .then(function (res) {
+console.log(2, res); addDiv(res); });

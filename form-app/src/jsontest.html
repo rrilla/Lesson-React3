@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let user = {
+        id: 1,
+        username: "ssar",
+      };
+
+      console.log(user);
+
+      let jsonUser = JSON.stringify(user); //js obj를 json으로
+      console.log(jsonUser);
+
+      //let objectUser = JSON.parse(jsonUser);    //json을 js obj
+
+      fetch("http://10.100.102.2:8080/api/movie", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json;charset=utf-8", //json인데 utf-8로 던질게
+        },
+        body: jsonUser,
+      })
+        .then((res) => res.text())
+        .then((res) => {
+          if (res === "ok") {
+            //성공시 할 행동
+          }
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: grey;
+      }
+
+      .container {
+        width: 700px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .title {
+        color: red;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 10px 0;
+      }
+
+      .article {
+        font-size: 12px;
+        margin: 5px 0;
+      }
+
+      .grid__box {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+      }
+
+      .grid__img {
+        display: grid;
+        align-items: center;
+        height: 170px;
+        background-size: 100% 100%;
+      }
+
+      .grid__img1 {
+        background-image: url("san-francisco.jpg");
+      }
+
+      .grid__img2 {
+        background-image: url("new-york.jpg");
+      }
+
+      .grid__img3 {
+        background-image: url("london.jpg");
+      }
+
+      .grid__img4 {
+        background-image: url("napa.jpg");
+      }
+
+      .grid__img5 {
+        background-image: url("sonoma.jpg");
+      }
+
+      .grid__img6 {
+        background-image: url("san-francisco-2.jpg");
+      }
+
+      .grid__text {
+        color: white;
+        font-size: 15px;
+      }
+
+      .btn button {
+        background-color: pink;
+        border: 1px solid black;
+        border-radius: 6px;
+        color: white;
+        height: 30px;
+        width: 200px;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section>
+        <div class="title">Meet GuideBooks</div>
+        <div class="article">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste
+          architecto facere omnis non in dignissimos fugiat labore temporibus,
+          excepturi placeat ipsa ut necessitatibus quas id maxime tenetur
+          consequuntur voluptatibus illo?
+        </div>
+        <div class="grid__box">
+          <div class="grid__img1 grid__img">
+            <span class="grid__text">San Francisco</span>
+          </div>
+          <div class="grid__img2 grid__img">
+            <span class="grid__text">New York</span>
+          </div>
+          <div class="grid__img3 grid__img">
+            <span class="grid__text">London</span>
+          </div>
+        </div>
+        <div class="btn">
+          <button>See All asdfasdfasdf</button>
+        </div>
+      </section>
+
+      <section>
+        <div class="title">Just for the weekend</div>
+        <div class="article">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+          delectus omnis facilis reprehenderit quo rerum officiis nam.
+          Distinctio eius repudiandae perferendis molestias nobis officiis eaque
+          aut totam numquam, tempora repellat.
+        </div>
+        <div class="grid__box">
+          <div class="grid__img4 grid__img">
+            <span class="grid__text">Napa</span>
+          </div>
+          <div class="grid__img5 grid__img">
+            <span class="grid__text">Sonoma</span>
+          </div>
+          <div class="grid__img6 grid__img">
+            <span class="grid__text">San Francisco</span>
+          </div>
+        </div>
+        <div class="btn">
+          <button>See All asdfasdfasdf</button>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let list = [1, 2, 3, 4, 5];
+
+      console.log(...list); //순회하면서 값을 하나씩 뿌림
+
+      let list2 = [...list]; //배열 복사
+      console.log(list2);
+
+      let list3 = [...list, 6]; //6추가
+      console.log(list3);
+
+      let list4 = [...list.slice(0, 2), 6, ...list.slice(2, 5)];
+      //배열에서 중간에 원하는 값 추가
+      console.log(list4);
+
+      let user = {
+        id: 1,
+        name: "ssar",
+      };
+
+      let newUser = { ...user, name: "cos" };
+      //오브젝트에서 내가 원하는 값 바꾸기
+      console.log({ ...user });
+      console.log({ ...newUser });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        justify-content: space-around;
+        grid-gap: 20px;
+        margin: 20px;
+        width: 90%;
+      }
+
+      /* .flex-container{
+        display: flex;
+        justify-content: space-around;
+      } */
+    </style>
+  </head>
+  <body>
+    <button class="upBtn" onclick="upload()">등록</button>
+    <div class="grid-container">
+      <!-- 박스 시작 -->
+      <!-- <div class="card" style="width: 300px">
+        <img class="card-img-top" src="baby4.jpg" />
+        <div class="card-body">
+          <h4 class="card-title">애기</h4>
+          <p class="card-text">평점5</p>
+          <button class="btn btn-danger">삭제</button>
+        </div>
+      </div> -->
+      <!-- 박스 끝 -->
+    </div>
+
+    <script>
+      fetch("http://192.168.0.254:8000/api/movie", {
+        method: "get",
+      })
+        .then(function (res) {
+          //fetch 끝나면 실행
+          console.log(1, res);
+          alert(res);
+          return res.json(); //json데이터를 js 오브젝트로 바꿔서 주라
+        })
+        .then(function (res) {
+          console.log(2, res);
+          addDiv(res);
+        });
+
+      function addDiv(movies) {
+        let gridContainer = document.querySelector(".grid-container");
+
+        for (movie of movies) {
+          let title = movie.title;
+          let rating = movie.rating;
+          let medium_cover_image = movie.medium_cover_image;
+
+          let newDiv = document.createElement("div"); //빈 div를 하나 만듬.
+          newDiv.className = "card";
+          newDiv.style = "width:300px";
+          //newDiv.id = "card-" + movie.id;
+          newDiv.id = `card-${movie.id}`;
+
+          let cardItem = `<img class="card-img-top" src="${medium_cover_image}" />`; //
+          cardItem += `<div class="card-body">`;
+          cardItem += `<h4 class="card-title">${title}</h4>`;
+          cardItem += `<p class="card-text">${rating}</p>`;
+          cardItem += `<button onClick="deleteById(${movie.id})" class="btn btn-danger">삭제</button>`;
+          cardItem += `</div>`;
+
+          newDiv.innerHTML = cardItem;
+          gridContainer.append(newDiv);
+        }
+      }
+
+      function deleteById(movieId) {
+        fetch(`http://192.168.0.254:8000/api/movie/${movieId}`, {
+          method: "delete",
+        })
+          .then(function (res) {
+            alert(res);
+            console.log(1, res);
+            return res.text();
+          })
+          .then(function (res) {
+            console.log(2, res);
+            if (res == "ok") {
+              alert("삭제성공");
+            } else {
+              alert("삭제실패");
+            }
+          });
+
+        let cardItem = document.querySelector("#card-" + movieId);
+        cardItem.parentElement.removeChild(cardItem);
+
+        function upload() {}
+      }
+    </script>
+  </body>
+</html>

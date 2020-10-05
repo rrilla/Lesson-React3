@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .flex-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: grey;
+      }
+
+      .flex-container2 {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .flex-container > div {
+        background-color: #f1f1f1;
+        margin: 10px;
+        padding: 20px;
+        font-size: 30px;
+      }
+
+      .flex-container2 > div {
+        width: 300px;
+        height: 300px;
+        margin: 10px;
+        font-size: 30px;
+        align-self: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div>Meet Guidebooks</div>
+      <div>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+        assumenda, reprehenderit, necessitatibus, minima quam ullam explicabo
+        deserunt numquam sed quae ratione. Asperiores dignissimos quis dolorem
+        accusamus fuga modi voluptatum obcaecati.
+      </div>
+      <div class="flex-container2">
+        <div style="background-image: url('london.jpg')">London</div>
+        <div style="background-image: url('napa.jpg')">Napa</div>
+        <div style="background-image: url('new-york.jpg')">New-York</div>
+      </div>
+      <div>
+        <button>See All Guidebooks</button>
+      </div>
+    </div>
+
+    <p>
+      A Flexible Layout must have a parent element with the
+      <em>display</em> property set to <em>flex</em>.
+    </p>
+
+    <p>
+      Direct child elements(s) of the flexible container automatically becomes
+      flexible items.
+    </p>
+  </body>
+</html>
