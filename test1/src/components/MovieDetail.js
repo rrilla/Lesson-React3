@@ -18,14 +18,14 @@ const MovieDetail = (props) => {
   }
 
   function submitMovie(e) {
-    e.preventDefault(); //form안의 버튼은 submit할라고 난리침 그걸 막는거
+    e.preventDefault();
     let jsonMovie = JSON.stringify(movie);
-    console.log(jsonMovie);
+    console.log("수정한 데이터 : " + jsonMovie);
 
     fetch(`http://10.100.102.2:8000/api/movie/${id}`, {
       method: "put",
       headers: {
-        "Content-Type": "application/json;charset=utf-8", //json인데 utf-8로 던질게
+        "Content-Type": "application/json;charset=utf-8",
       },
       body: jsonMovie,
     })
@@ -35,7 +35,6 @@ const MovieDetail = (props) => {
         if (res === "ok") {
           alert("영화 수정 성공.");
           window.history.back();
-          //Location.href = document.referrer;
         } else {
           alert("영화 수정 실패.");
         }
@@ -50,7 +49,6 @@ const MovieDetail = (props) => {
       summary: "",
       medium_cover_image: "",
     });
-    //document.querySelector("input").value = user;
   }
 
   return (
@@ -85,7 +83,7 @@ const MovieDetail = (props) => {
         />
         <br />
         <button onClick={reset}>리셋</button>
-        <button onClick={submitMovie}>전송</button>
+        <button onClick={submitMovie}>수정</button>
       </form>
     </div>
   );
