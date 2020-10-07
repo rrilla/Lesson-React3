@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const InputS = styled.input`
   width: 100%; /* 원하는 너비 설정 */
-  height: 30px; /* 높이값 초기화 */
+  height: 40px; /* 높이값 초기화 */
   line-height: normal; /* line-height 초기화 */
   padding: 0.8em 0.5em; /* 원하는 여백 설정, 상하단 여백으로 높이를 조절 */
   font-family: inherit; /* 폰트 상속 */
@@ -19,7 +19,7 @@ const ButtonS = styled.button`
   color: white;
   width: 70px;
   height: 30px;
-  background-color: red;
+  background-color: #aa1212;
   box-shadow: 1px 1px 0px 0px rgb(167, 111, 111);
 `;
 

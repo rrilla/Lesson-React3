@@ -7,7 +7,8 @@ const CardBodyS = styled.div`
 `;
 
 const CardS = styled.div`
-  height: 500px;
+  background-color: #d5d5d5;
+  height: auto;
   border: 1px solid rgb(197, 197, 197);
   border-radius: 10px;
   box-shadow: 1px 1px 0px 0px rgb(54, 53, 53);
@@ -17,13 +18,13 @@ const ButtonS = styled.button`
   color: white;
   width: 70px;
   height: 30px;
-  background-color: red;
+  background-color: #aa1212;
   box-shadow: 1px 1px 0px 0px rgb(167, 111, 111);
 `;
 
 const ImgS = styled.img`
   width: 100%;
-  height: 300px;
+  height: 200px;
 `;
 
 const MovieItem = (props) => {
@@ -33,7 +34,6 @@ const MovieItem = (props) => {
   return (
     <CardS>
       <ImgS src={medium_cover_image} alt="" />
-
       <CardBodyS>
         <h4 class="card-title">{title}</h4>
         <p class="card-text">{rating}</p>

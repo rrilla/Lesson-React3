@@ -4,7 +4,7 @@ import MovieItem from "./MovieItem";
 
 const GridS = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto;
   grid-gap: 30px;
   justify-content: space-around;
   margin: 10px;
@@ -29,7 +29,10 @@ const List = () => {
         if (res === "ok") {
           alert("삭제 성공.");
           setMovies(movies.filter((movie) => movie.id !== movieId));
-        } else alert("삭제 실패.");
+        } else {
+          console.log(res);
+          alert("삭제 실패.");
+        }
       });
   }
 

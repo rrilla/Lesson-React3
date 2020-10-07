@@ -45,7 +45,7 @@
 
 ### 결과
 
-![image](img/메인.PNG)
+![image]()
 
 ![image](https://user-images.githubusercontent.com/69227435/95168287-0b686780-07ec-11eb-874e-a98b637f6067.png)
 
